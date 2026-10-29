@@ -1,8 +1,11 @@
 # Plushie Studio website
 
-Buildless landing page for **https://plushiestudio.app/**. Version 0.1.1.
+Buildless landing page for **https://plushiestudio.app/**. Version 0.1.2.
 The app icon is the existing production icon; DM Sans is bundled under its OFL.
 The page makes no requests to third-party font or analytics services.
+The system color preference selects the light or dark palette, including the
+browser theme color, CTA, ground grid and icon depth. The production icon keeps
+its original colors. No theme selector or additional call to action is added.
 
 ## Preview
 

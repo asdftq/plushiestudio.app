@@ -7,10 +7,26 @@
 }
 
 :root {
-  color-scheme: light;
+  color-scheme: light dark;
+  --page: #f3f2ee;
+  --ink: #30332e;
+  --muted: #686d63;
+  --accent: #85917b;
+  --status: #839375;
+  --divider: #adb0a6;
+  --grid: #959b8b24;
+  --contact: #46493725;
+  --button: #363d32;
+  --button-hover: #454f3e;
+  --button-ink: #fafbf7;
+  --button-edge: #ffffff20;
+  --button-shadow: #27302210;
+  --button-hover-shadow: #27302218;
+  --focus: #647a51;
+  --object-shadow: 1px 1px 0 #dcd7cb, 2px 2px 0 #d8d3c7, 3px 3px 0 #d4cfc3, 4px 4px 0 #d0cbbf, 5px 5px 0 #ccc7bb, 6px 6px 0 #c8c3b7, 7px 7px 0 #c4bfb3, 9px 12px 18px #625b4020;
   font-family: "DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  color: #30332e;
-  background: #f3f2ee;
+  color: var(--ink);
+  background: var(--page);
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
 }
@@ -39,7 +55,7 @@ main {
   position: absolute;
   inset: 13% -45% -14%;
   z-index: -2;
-  background-image: linear-gradient(#959b8b24 1px, transparent 1px), linear-gradient(90deg, #959b8b24 1px, transparent 1px);
+  background-image: linear-gradient(var(--grid) 1px, transparent 1px), linear-gradient(90deg, var(--grid) 1px, transparent 1px);
   background-size: 32px 32px;
   transform: rotateX(65deg) rotateZ(-18deg);
   mask-image: radial-gradient(ellipse at 50% 50%, #0009, transparent 65%);
@@ -52,7 +68,7 @@ main {
   top: 169px;
   left: 98px;
   border-radius: 50%;
-  background: #46493725;
+  background: var(--contact);
   filter: blur(12px);
   transform: rotate(-14deg);
   pointer-events: none;
@@ -64,7 +80,7 @@ main {
   border-radius: 29px;
   background: #e9e4d9;
   transform: translateY(0) rotateX(12deg) rotateY(-19deg) rotateZ(-9deg);
-  box-shadow: 1px 1px 0 #dcd7cb, 2px 2px 0 #d8d3c7, 3px 3px 0 #d4cfc3, 4px 4px 0 #d0cbbf, 5px 5px 0 #ccc7bb, 6px 6px 0 #c8c3b7, 7px 7px 0 #c4bfb3, 9px 12px 18px #625b4020;
+  box-shadow: var(--object-shadow);
   transition: transform 450ms cubic-bezier(.2,.8,.2,1);
   overflow: hidden;
   user-select: none;
@@ -85,7 +101,7 @@ h1 {
   letter-spacing: -1.5px;
   line-height: 1.2;
 }
-.period { color: #85917b; }
+.period { color: var(--accent); }
 .status {
   margin: 17px 0 30px;
   display: flex;
@@ -95,10 +111,10 @@ h1 {
   font-size: 12px;
   font-weight: 450;
   letter-spacing: .1px;
-  color: #686d63;
+  color: var(--muted);
 }
-.status-dot { width: 5px; height: 5px; border-radius: 50%; background: #839375; }
-.divider { color: #adb0a6; margin: 0 2px; }
+.status-dot { width: 5px; height: 5px; border-radius: 50%; background: var(--status); }
+.divider { color: var(--divider); margin: 0 2px; }
 .discord {
   min-height: 48px;
   display: inline-flex;
@@ -107,20 +123,40 @@ h1 {
   gap: 12px;
   padding: 0 21px;
   border-radius: 15px;
-  color: #fafbf7;
-  background: #363d32;
+  color: var(--button-ink);
+  background: var(--button);
   text-decoration: none;
   font-size: 13px;
   font-weight: 500;
-  box-shadow: inset 0 1px 0 #ffffff20, 0 2px 3px #27302210;
+  box-shadow: inset 0 1px 0 var(--button-edge), 0 2px 3px var(--button-shadow);
   transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 .arrow { margin-left: 5px; opacity: .6; transition: transform 160ms ease, opacity 160ms ease; }
-.discord:hover { background: #454f3e; transform: translateY(-2px); box-shadow: inset 0 1px 0 #ffffff20, 0 5px 12px #27302218; }
+.discord:hover { background: var(--button-hover); transform: translateY(-2px); box-shadow: inset 0 1px 0 var(--button-edge), 0 5px 12px var(--button-hover-shadow); }
 .discord:hover .arrow { opacity: 1; transform: translate(1px,-1px); }
 .discord:active { transform: translateY(1px) scale(.98); box-shadow: none; }
-.discord:focus-visible { outline: 2px solid #647a51; outline-offset: 5px; }
+.discord:focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; }
+@media (prefers-color-scheme: dark) {
+  :root {
+    --page: #171a17;
+    --ink: #edece5;
+    --muted: #a6ae9f;
+    --accent: #adbda0;
+    --status: #a8bf94;
+    --divider: #5e6859;
+    --grid: #a3b49632;
+    --contact: #000000a6;
+    --button: #cedac2;
+    --button-hover: #e1ead8;
+    --button-ink: #263021;
+    --button-edge: #ffffff45;
+    --button-shadow: #00000038;
+    --button-hover-shadow: #00000066;
+    --focus: #b5cc9f;
+    --object-shadow: 1px 1px 0 #b5b1a6, 2px 2px 0 #aba79c, 3px 3px 0 #a09c91, 4px 4px 0 #969287, 5px 5px 0 #8c887d, 6px 6px 0 #817d72, 7px 7px 0 #777368, 9px 16px 28px #00000080;
+  }
+}
 @media (max-height: 540px) {
   main { padding: 24px; }
   .stage { height: 175px; padding-top: 8px; margin-bottom: 8px; }
