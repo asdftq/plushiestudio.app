@@ -85,6 +85,7 @@ main {
   overflow: hidden;
   user-select: none;
 }
+.object.tracking { transition: transform 90ms linear; }
 .object img { width: 100%; height: 100%; display: block; }
 .sheen {
   position: absolute;
@@ -108,7 +109,7 @@ h1 {
   align-items: center;
   justify-content: center;
   gap: 9px;
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 450;
   letter-spacing: .1px;
   color: var(--muted);
@@ -126,16 +127,18 @@ h1 {
   color: var(--button-ink);
   background: var(--button);
   text-decoration: none;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   box-shadow: inset 0 1px 0 var(--button-edge), 0 2px 3px var(--button-shadow);
   transition: transform 160ms ease, background 160ms ease, box-shadow 160ms ease;
   -webkit-tap-highlight-color: transparent;
 }
 .arrow { margin-left: 5px; opacity: .6; transition: transform 160ms ease, opacity 160ms ease; }
-.discord:hover { background: var(--button-hover); transform: translateY(-2px); box-shadow: inset 0 1px 0 var(--button-edge), 0 5px 12px var(--button-hover-shadow); }
-.discord:hover .arrow { opacity: 1; transform: translate(1px,-1px); }
-.discord:active { transform: translateY(1px) scale(.98); box-shadow: none; }
+@media (hover: hover) and (pointer: fine) {
+  .discord:hover { background: var(--button-hover); transform: translateY(-2px); box-shadow: inset 0 1px 0 var(--button-edge), 0 5px 12px var(--button-hover-shadow); }
+  .discord:hover .arrow { opacity: 1; transform: translate(1px,-1px); }
+}
+.discord:active { transform: translateY(1px) scale(.98); box-shadow: none; transition-duration: 60ms; }
 .discord:focus-visible { outline: 2px solid var(--focus); outline-offset: 5px; }
 @media (prefers-color-scheme: dark) {
   :root {
